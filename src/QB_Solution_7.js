@@ -129,50 +129,24 @@ const ImageSwitcher = () => {
   };
 
   return (
-    <div style={styles.container}>
-      <img
-        src={isFirstImage ? 'image1.jpg' : 'image2.jpg'}
-        alt="Switchable"
-        style={styles.image}
-      />
-      <button onClick={handleImageChange} style={styles.button}>
+    <div>
+      <img src={isFirstImage ? 'image1.jpg' : 'image2.jpg'}/>
+      <button onClick={handleImageChange}>
         Change Image
       </button>
     </div>
   );
 };
 
-const styles = {
-  container: {
-    display: 'flex',
-    flexDirection: 'column',
-    alignItems: 'center',
-    justifyContent: 'center',
-    height: '100vh',
-    backgroundColor: '#f0f0f0',
-  },
-  image: {
-    width: '300px',
-    height: '300px',
-    objectFit: 'cover',
-    marginBottom: '20px',
-  },
-  button: {
-    padding: '10px 20px',
-    fontSize: '16px',
-    cursor: 'pointer',
-  },
-};
 
 export default ImageSwitcher;
 
 import React from 'react';
 import ImageSwitcher from './ImageSwitcher';
-import './App.css';
 
 const App = () => {
   return (
-    <div className="App">
+    <div>
       <ImageSwitcher />
     </div>
   );
@@ -202,29 +176,17 @@ const NameDisplay = () => {
   };
 
   return (
-    <div style={styles.container}>
+    <div>
       <h1>Name Display</h1>
-      <div style={styles.inputGroup}>
+      <div>
         <label htmlFor="firstName">First Name:</label>
-        <input
-          type="text"
-          id="firstName"
-          value={firstName}
-          onChange={handleFirstNameChange}
-          style={styles.input}
-        />
+        <input type="text" id="firstName" value={firstName} onChange={handleFirstNameChange} />
       </div>
-      <div style={styles.inputGroup}>
+      <div>
         <label htmlFor="lastName">Last Name:</label>
-        <input
-          type="text"
-          id="lastName"
-          value={lastName}
-          onChange={handleLastNameChange}
-          style={styles.input}
-        />
+        <input type="text" id="lastName" value={lastName} onChange={handleLastNameChange}/>
       </div>
-      <div style={styles.display}>
+      <div>
         <h2>Entered Name:</h2>
         <p>{`${firstName} ${lastName}`}</p>
       </div>
@@ -232,43 +194,16 @@ const NameDisplay = () => {
   );
 };
 
-const styles = {
-  container: {
-    display: 'flex',
-    flexDirection: 'column',
-    alignItems: 'center',
-    justifyContent: 'center',
-    height: '100vh',
-    backgroundColor: '#f0f0f0',
-    padding: '20px',
-  },
-  inputGroup: {
-    margin: '10px 0',
-  },
-  input: {
-    marginLeft: '10px',
-    padding: '5px',
-    fontSize: '16px',
-  },
-  display: {
-    marginTop: '20px',
-    padding: '10px',
-    backgroundColor: '#fff',
-    borderRadius: '5px',
-    boxShadow: '0 0 10px rgba(0, 0, 0, 0.1)',
-  },
-};
 
 export default NameDisplay;
 
 
 import React from 'react';
 import NameDisplay from './NameDisplay';
-import './App.css';
 
 const App = () => {
   return (
-    <div className="App">
+    <div>
       <NameDisplay />
     </div>
   );
@@ -307,23 +242,17 @@ const TodoList = () => {
   };
 
   return (
-    <div style={styles.container}>
+    <div >
       <h1>Todo List</h1>
-      <div style={styles.inputGroup}>
-        <input
-          type="text"
-          value={task}
-          onChange={handleInputChange}
-          placeholder="Enter a task"
-          style={styles.input}
-        />
-        <button onClick={handleAddTask} style={styles.button}>Add</button>
+      <div>
+        <input type="text" value={task} onChange={handleInputChange} placeholder="Enter a task"/>
+        <button onClick={handleAddTask}>Add</button>
       </div>
-      <ul style={styles.list}>
-        {tasks.map((task, index) => (
-          <li key={index} style={styles.listItem}>
+      <ul>
+        {tasks.map((task) => (
+          <li>
             {task}
-            <button onClick={() => handleDeleteTask(index)} style={styles.deleteButton}>Delete</button>
+            <button onClick={() => handleDeleteTask(index)}>Delete</button>
           </li>
         ))}
       </ul>
@@ -331,66 +260,15 @@ const TodoList = () => {
   );
 };
 
-const styles = {
-  container: {
-    display: 'flex',
-    flexDirection: 'column',
-    alignItems: 'center',
-    justifyContent: 'center',
-    height: '100vh',
-    backgroundColor: '#f0f0f0',
-    padding: '20px',
-  },
-  inputGroup: {
-    display: 'flex',
-    alignItems: 'center',
-    marginBottom: '20px',
-  },
-  input: {
-    padding: '10px',
-    fontSize: '16px',
-    marginRight: '10px',
-  },
-  button: {
-    padding: '10px 20px',
-    fontSize: '16px',
-    cursor: 'pointer',
-  },
-  list: {
-    listStyleType: 'none',
-    padding: '0',
-  },
-  listItem: {
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'space-between',
-    backgroundColor: '#fff',
-    padding: '10px',
-    margin: '5px 0',
-    width: '300px',
-    borderRadius: '5px',
-    boxShadow: '0 0 10px rgba(0, 0, 0, 0.1)',
-  },
-  deleteButton: {
-    backgroundColor: '#ff4d4d',
-    border: 'none',
-    color: 'white',
-    padding: '5px 10px',
-    cursor: 'pointer',
-    borderRadius: '5px',
-  },
-};
-
 export default TodoList;
 
 
 import React from 'react';
 import TodoList from './TodoList';
-import './App.css';
 
 const App = () => {
   return (
-    <div className="App">
+    <div>
       <TodoList />
     </div>
   );
@@ -413,44 +291,24 @@ const ShowHideText = () => {
   };
 
   return (
-    <div style={styles.container}>
-      <button onClick={handleToggleText} style={styles.button}>
+    <div>
+      <button onClick={handleToggleText}>
         {isTextVisible ? 'Hide' : 'Show'} Text
       </button>
-      {isTextVisible && <p style={styles.text}>This is some text to show and hide.</p>}
+      {isTextVisible && <p>This is some text to show and hide.</p>}
     </div>
   );
 };
 
-const styles = {
-  container: {
-    display: 'flex',
-    flexDirection: 'column',
-    alignItems: 'center',
-    justifyContent: 'center',
-    height: '100vh',
-    backgroundColor: '#f0f0f0',
-  },
-  button: {
-    padding: '10px 20px',
-    fontSize: '16px',
-    cursor: 'pointer',
-  },
-  text: {
-    marginTop: '20px',
-    fontSize: '18px',
-  },
-};
 
 export default ShowHideText;
 
 import React from 'react';
 import ShowHideText from './ShowHideText';
-import './App.css';
 
 const App = () => {
   return (
-    <div className="App">
+    <div>
       <ShowHideText />
     </div>
   );
@@ -492,62 +350,20 @@ const AddNumbers = () => {
   };
 
   return (
-    <div style={styles.container}>
+    <div >
       <h1>Add Numbers</h1>
-      <div style={styles.inputGroup}>
+      <div>
         <label htmlFor="number1">Number 1:</label>
-        <input
-          type="number"
-          id="number1"
-          value={number1}
-          onChange={handleNumber1Change}
-          style={styles.input}
-        />
+        <input type="number" id="number1" value={number1} onChange={handleNumber1Change}/>
       </div>
-      <div style={styles.inputGroup}>
+      <div>
         <label htmlFor="number2">Number 2:</label>
-        <input
-          type="number"
-          id="number2"
-          value={number2}
-          onChange={handleNumber2Change}
-          style={styles.input}
-        />
+        <input type="number" id="number2" value={number2} onChange={handleNumber2Change}/>
       </div>
-      <button onClick={handleAddNumbers} style={styles.button}>Add</button>
-      {sum !== null && <h2 style={styles.result}>Sum: {sum}</h2>}
+      <button onClick={handleAddNumbers}>Add</button>
+      {sum !== null && <h2>Sum: {sum}</h2>}
     </div>
   );
-};
-
-const styles = {
-  container: {
-    display: 'flex',
-    flexDirection: 'column',
-    alignItems: 'center',
-    justifyContent: 'center',
-    height: '100vh',
-    backgroundColor: '#f0f0f0',
-    padding: '20px',
-  },
-  inputGroup: {
-    margin: '10px 0',
-  },
-  input: {
-    marginLeft: '10px',
-    padding: '5px',
-    fontSize: '16px',
-  },
-  button: {
-    padding: '10px 20px',
-    fontSize: '16px',
-    cursor: 'pointer',
-    marginTop: '20px',
-  },
-  result: {
-    marginTop: '20px',
-    color: 'green',
-  },
 };
 
 export default AddNumbers;
@@ -555,11 +371,11 @@ export default AddNumbers;
 
 import React from 'react';
 import AddNumbers from './AddNumbers';
-import './App.css';
+
 
 const App = () => {
   return (
-    <div className="App">
+    <div>
       <AddNumbers />
     </div>
   );
@@ -599,7 +415,7 @@ import ChangeText from './ChangeText';
 
 const App = () => {
   return (
-    <div className="App">
+    <div>
       <ChangeText />
     </div>
   );
@@ -622,7 +438,6 @@ const DigitalClock = () => {
       setTime(new Date());
     }, 1000);
 
-    // Cleanup interval on component unmount
     return () => clearInterval(timer);
   }, []);
 
@@ -646,11 +461,10 @@ export default DigitalClock;
 
 import React from 'react';
 import DigitalClock from './DigitalClock';
-import './App.css';
 
 const App = () => {
   return (
-    <div className="App">
+    <div>
       <DigitalClock />
     </div>
   );
@@ -669,14 +483,12 @@ const UseEffectDemo = () => {
 
   useEffect(() => {
     console.log('Component mounted or updated.');
-    // This effect runs only once after the initial render.
     document.title = `Count: ${count}`;
 
-    // Cleanup function (if needed)
     return () => {
       console.log('Cleanup on component unmount');
     };
-  }, []); // Empty dependency array
+  }, []);
 
   const increment = () => setCount(count + 1);
 
@@ -690,14 +502,12 @@ const UseEffectDemo = () => {
 
 export default UseEffectDemo;
 
-
 import React from 'react';
 import UseEffectDemo from './UseEffectDemo';
-import './App.css';
 
 const App = () => {
   return (
-    <div className="App">
+    <div>
       <UseEffectDemo />
     </div>
   );
@@ -717,10 +527,8 @@ numbers using useContext.
 */
 import React, { createContext, useState, useContext } from 'react';
 
-// Create a Context
 const NumberContext = createContext();
 
-// Create a Context Provider component
 export const NumberProvider = ({ children }) => {
   const [number1, setNumber1] = useState(0);
   const [number2, setNumber2] = useState(0);
@@ -731,15 +539,12 @@ export const NumberProvider = ({ children }) => {
   };
 
   return (
-    <NumberContext.Provider
-      value={{ number1, setNumber1, number2, setNumber2, product, calculateProduct }}
-    >
+    <NumberContext.Provider value={{ number1, setNumber1, number2, setNumber2, product, calculateProduct }}>
       {children}
     </NumberContext.Provider>
   );
 };
 
-// Custom hook for using context
 export const useNumberContext = () => useContext(NumberContext);
 
 
@@ -775,11 +580,7 @@ const Comp1 = () => {
       <h2>Component 1</h2>
       <label>
         Number 1:
-        <input
-          type="number"
-          value={number1}
-          onChange={(e) => setNumber1(Number(e.target.value))}
-        />
+        <input type="number" value={number1} onChange={(e) => setNumber1(Number(e.target.value))}/>
       </label>
     </div>
   );
@@ -799,11 +600,7 @@ const Comp2 = () => {
       <h2>Component 2</h2>
       <label>
         Number 2:
-        <input
-          type="number"
-          value={number2}
-          onChange={(e) => setNumber2(Number(e.target.value))}
-        />
+        <input type="number" value={number2} onChange={(e) => setNumber2(Number(e.target.value))}/>
       </label>
     </div>
   );
@@ -927,24 +724,20 @@ email details entered by the user.
 import React, { useState } from 'react';
 
 const SignUpForm = () => {
-  // State variables for form fields
   const [username, setUsername] = useState('');
   const [age, setAge] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
 
-  // Handle form submission
   const handleSubmit = (event) => {
-    event.preventDefault(); // Prevent the default form submission behavior
+    event.preventDefault(); 
 
-    // Check if password and confirm password match
     if (password !== confirmPassword) {
       alert("Passwords do not match!");
       return;
     }
 
-    // Display an alert with the entered details
     alert(`Username: ${username}\nAge: ${age}\nEmail: ${email}`);
   };
 
@@ -955,56 +748,31 @@ const SignUpForm = () => {
         <div>
           <label>
             Username:
-            <input
-              type="text"
-              value={username}
-              onChange={(e) => setUsername(e.target.value)}
-              required
-            />
+            <input type="text" value={username} onChange={(e) => setUsername(e.target.value)} required/>
           </label>
         </div>
         <div>
           <label>
             Age:
-            <input
-              type="number"
-              value={age}
-              onChange={(e) => setAge(e.target.value)}
-              required
-            />
+            <input type="number" value={age} onChange={(e) => setAge(e.target.value)} required/>
           </label>
         </div>
         <div>
           <label>
             Email:
-            <input
-              type="email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              required
-            />
+            <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} required/>
           </label>
         </div>
         <div>
           <label>
             Password:
-            <input
-              type="password"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-              required
-            />
+            <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} required/>
           </label>
         </div>
         <div>
           <label>
             Confirm Password:
-            <input
-              type="password"
-              value={confirmPassword}
-              onChange={(e) => setConfirmPassword(e.target.value)}
-              required
-            />
+            <input type="password" value={confirmPassword} onChange={(e) => setConfirmPassword(e.target.value)} required/>
           </label>
         </div>
         <button type="submit">Submit</button>
@@ -1018,11 +786,10 @@ export default SignUpForm;
 
 import React from 'react';
 import SignUpForm from './SignUpForm';
-import './App.css'; // Optional: Import CSS for additional styling
 
 const App = () => {
   return (
-    <div className="App">
+    <div>
       <SignUpForm />
     </div>
   );
@@ -1038,37 +805,36 @@ Create a React Form for email and password validation.*/
 import React, { useState } from 'react';
 
 const ValidationForm = () => {
-  // State variables for form fields
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [emailError, setEmailError] = useState('');
   const [passwordError, setPasswordError] = useState('');
 
-  // Validate email
   const validateEmail = (email) => {
     const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     return regex.test(email);
   };
 
-  // Validate password
-  const validatePassword = (password) => {
+  const validatePassword = (password) => 
+    {
     return password.length >= 8;
   };
 
-  // Handle form submission
+
   const handleSubmit = (event) => {
-    event.preventDefault(); // Prevent the default form submission behavior
+    event.preventDefault(); 
     let isValid = true;
 
-    // Validate email
-    if (!validateEmail(email)) {
+
+    if (!validateEmail(email)) 
+      {
       setEmailError('Invalid email address.');
       isValid = false;
     } else {
       setEmailError('');
     }
 
-    // Validate password
+
     if (!validatePassword(password)) {
       setPasswordError('Password must be at least 8 characters long.');
       isValid = false;
@@ -1088,11 +854,7 @@ const ValidationForm = () => {
         <div>
           <label>
             Email:
-            <input
-              type="email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              required
+            <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} required
             />
           </label>
           {emailError && <p style={{ color: 'red' }}>{emailError}</p>}
@@ -1100,12 +862,7 @@ const ValidationForm = () => {
         <div>
           <label>
             Password:
-            <input
-              type="password"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-              required
-            />
+            <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} required />
           </label>
           {passwordError && <p style={{ color: 'red' }}>{passwordError}</p>}
         </div>
@@ -1120,11 +877,10 @@ export default ValidationForm;
 
 import React from 'react';
 import ValidationForm from './ValidationForm';
-import './App.css'; // Optional: Import CSS for additional styling
 
 const App = () => {
   return (
-    <div className="App">
+    <div>
       <ValidationForm />
     </div>
   );
@@ -1140,12 +896,10 @@ Create a React Form for select any of pizza size using radio button*/
 import React, { useState } from 'react';
 
 const PizzaOrder = () => {
-  // State variable to keep track of selected pizza size
   const [pizzaSize, setPizzaSize] = useState('');
 
-  // Handle form submission
   const handleSubmit = (event) => {
-    event.preventDefault(); // Prevent default form submission behavior
+    event.preventDefault(); 
     alert(`Selected Pizza Size: ${pizzaSize}`);
   };
 
@@ -1155,33 +909,20 @@ const PizzaOrder = () => {
       <form onSubmit={handleSubmit}>
         <div>
           <label>
-            <input
-              type="radio"
-              value="Small"
-              checked={pizzaSize === 'Small'}
-              onChange={(e) => setPizzaSize(e.target.value)}
-            />
+            <input type="radio" value="Small" checked={pizzaSize === 'Small'} onChange={(e) => setPizzaSize(e.target.value)}/>
             Small
           </label>
         </div>
         <div>
           <label>
-            <input
-              type="radio"
-              value="Medium"
-              checked={pizzaSize === 'Medium'}
-              onChange={(e) => setPizzaSize(e.target.value)}
+            <input type="radio" value="Medium" checked={pizzaSize === 'Medium'} onChange={(e) => setPizzaSize(e.target.value)}
             />
             Medium
           </label>
         </div>
         <div>
           <label>
-            <input
-              type="radio"
-              value="Large"
-              checked={pizzaSize === 'Large'}
-              onChange={(e) => setPizzaSize(e.target.value)}
+            <input type="radio" value="Large" checked={pizzaSize === 'Large'} onChange={(e) => setPizzaSize(e.target.value)}
             />
             Large
           </label>
@@ -1196,11 +937,10 @@ export default PizzaOrder;
 
 import React from 'react';
 import PizzaOrder from './PizzaOrder';
-import './App.css'; // Optional: Import CSS for additional styling
 
 const App = () => {
   return (
-    <div className="App">
+    <div>
       <PizzaOrder />
     </div>
   );
@@ -1220,7 +960,6 @@ button value should be decremented by 1.
 */
 import React, { useReducer } from 'react';
 
-// Reducer function to handle state changes
 const counterReducer = (state, action) => {
   switch (action.type) {
     case 'INCREMENT':
@@ -1233,7 +972,7 @@ const counterReducer = (state, action) => {
 };
 
 const Counter = () => {
-  // Initialize the reducer with a state
+
   const [state, dispatch] = useReducer(counterReducer, { count: 0 });
 
   return (
@@ -1250,11 +989,11 @@ export default Counter;
 
 import React from 'react';
 import Counter from './Counter';
-import './App.css'; // Optional: Import CSS for additional styling
+
 
 const App = () => {
   return (
-    <div className="App">
+    <div>
       <Counter />
     </div>
   );
@@ -1273,7 +1012,7 @@ Create React Js app to perform the tasks as asked below.
 */
 import React, { useReducer } from 'react';
 
-// Reducer function to handle state changes
+
 const incrementReducer = (state, action) => {
   switch (action.type) {
     case 'INCREMENT':
@@ -1284,7 +1023,7 @@ const incrementReducer = (state, action) => {
 };
 
 const Increment = () => {
-  // Initialize the reducer with a state
+
   const [state, dispatch] = useReducer(incrementReducer, { value: 20 });
 
   return (
@@ -1300,11 +1039,10 @@ export default Increment;
 
 import React from 'react';
 import Increment from './Increment';
-import './App.css'; // Optional: Import CSS for additional styling
 
 const App = () => {
   return (
-    <div className="App">
+    <div>
       <Increment />
     </div>
   );
@@ -1321,11 +1059,9 @@ import React, { useState } from 'react';
 import axios from 'axios';
 
 const Joke = () => {
-  // State variables for joke and loading state
   const [joke, setJoke] = useState('');
   const [loading, setLoading] = useState(false);
 
-  // Function to fetch a random joke
   const fetchJoke = async () => {
     setLoading(true);
     try {
@@ -1353,11 +1089,11 @@ export default Joke;
 
 import React from 'react';
 import Joke from './Joke';
-import './App.css'; // Optional: Import CSS for additional styling
+
 
 const App = () => {
   return (
-    <div className="App">
+    <div>
       <Joke />
     </div>
   );
@@ -1383,7 +1119,6 @@ import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
 
 const ExamForm = () => {
-  // State variables for form fields
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -1449,75 +1184,42 @@ const ExamForm = () => {
       <form onSubmit={handleSubmit}>
         <div>
           <label>Name:</label>
-          <input
-            type="text"
-            name="name"
-            value={formData.name}
-            onChange={handleChange}
-            required
+          <input type="text" name="name" value={formData.name} onChange={handleChange} required
           />
         </div>
         <div>
           <label>Email:</label>
-          <input
-            type="email"
-            name="email"
-            value={formData.email}
-            onChange={handleChange}
-            required
+          <input type="email" name="email" value={formData.email} onChange={handleChange} required
           />
           {errors.email && <p style={{ color: 'red' }}>{errors.email}</p>}
         </div>
         <div>
           <label>Password:</label>
-          <input
-            type="password"
-            name="password"
-            value={formData.password}
-            onChange={handleChange}
-            required
+          <input type="password" name="password" value={formData.password} onChange={handleChange} required
           />
           {errors.password && <p style={{ color: 'red' }}>{errors.password}</p>}
         </div>
         <div>
           <label>Gender:</label>
           <label>
-            <input
-              type="radio"
-              name="gender"
-              value="Male"
-              checked={formData.gender === 'Male'}
-              onChange={handleChange}
+            <input type="radio" name="gender" value="Male" checked={formData.gender === 'Male'} onChange={handleChange}
             />
             Male
           </label>
           <label>
-            <input
-              type="radio"
-              name="gender"
-              value="Female"
-              checked={formData.gender === 'Female'}
-              onChange={handleChange}
+            <input type="radio" name="gender" value="Female" checked={formData.gender === 'Female'} onChange={handleChange}
             />
             Female
           </label>
         </div>
         <div>
           <label>Exam Date:</label>
-          <DatePicker
-            selected={formData.examDate}
-            onChange={handleDateChange}
-            dateFormat="yyyy/MM/dd"
-            required
+          <DatePicker selected={formData.examDate} onChange={handleDateChange} dateFormat="yyyy/MM/dd" required
           />
         </div>
         <div>
           <label>Exam Center:</label>
-          <select
-            name="examCenter"
-            value={formData.examCenter}
-            onChange={handleChange}
-            required
+          <select name="examCenter" value={formData.examCenter} onChange={handleChange} required
           >
             <option value="">Select Exam Center</option>
             <option value="Center1">Center 1</option>
@@ -1536,7 +1238,6 @@ export default ExamForm;
 
 import React from 'react';
 import ExamForm from './ExamForm';
-import './App.css'; // Optional: Import CSS for additional styling
 
 const App = () => {
   return (
@@ -1559,11 +1260,9 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 
 const Flower = () => {
-  // State for storing the flower image URL and loading state
   const [flowerImage, setFlowerImage] = useState('');
   const [loading, setLoading] = useState(true);
 
-  // Function to fetch a random flower image
   const fetchFlowerImage = async () => {
     setLoading(true);
     try {
@@ -1576,7 +1275,6 @@ const Flower = () => {
     }
   };
 
-  // Fetch the flower image when the component mounts
   useEffect(() => {
     fetchFlowerImage();
   }, []);
@@ -1601,7 +1299,6 @@ export default Flower;
 
 import React from 'react';
 import Flower from './Flower';
-import './App.css'; // Optional: Import CSS for additional styling
 
 const App = () => {
   return (
@@ -1627,7 +1324,6 @@ When the user Click on the Submit button , it will display an alert and use useS
 import React, { useState } from 'react';
 
 const StudentForm = () => {
-  // State for storing form data
   const [formData, setFormData] = useState({
     studentName: '',
     gender: '',
@@ -1659,44 +1355,24 @@ const StudentForm = () => {
           <form onSubmit={handleSubmit}>
             <div>
               <label>Student Name:</label>
-              <input
-                type="text"
-                name="studentName"
-                value={formData.studentName}
-                onChange={handleChange}
-                required
-              />
+              <input type="text" name="studentName" value={formData.studentName} onChange={handleChange} required/>
             </div>
             <div>
               <label>Gender:</label>
               <label>
-                <input
-                  type="radio"
-                  name="gender"
-                  value="Boy"
-                  checked={formData.gender === 'Boy'}
-                  onChange={handleChange}
+                <input type="radio" name="gender" value="Boy" checked={formData.gender === 'Boy'} onChange={handleChange}
                 />
                 Boy
               </label>
               <label>
-                <input
-                  type="radio"
-                  name="gender"
-                  value="Girl"
-                  checked={formData.gender === 'Girl'}
-                  onChange={handleChange}
+                <input type="radio"  name="gender" value="Girl" checked={formData.gender === 'Girl'} onChange={handleChange}
                 />
                 Girl
               </label>
             </div>
             <div>
               <label>Subject:</label>
-              <select
-                name="subject"
-                value={formData.subject}
-                onChange={handleChange}
-                required
+              <select  name="subject" value={formData.subject} onChange={handleChange} required
               >
                 <option value="">Select Subject</option>
                 <option value="English">English</option>
@@ -1719,11 +1395,9 @@ const StudentForm = () => {
       
 import React from 'react';
 import StudentForm from './StudentForm';
-import './App.css'; // Optional: Import CSS for additional styling
 
 const App = () => {
   return (
-    <div className="App">
       <StudentForm />
     </div>
   );
@@ -1762,29 +1436,17 @@ const SurveyForm = () => {
       <form onSubmit={handleSubmit}>
         <div>
           <label>
-            <input
-              type="radio"
-              value="Option 1"
-              checked={selectedOption === 'Option 1'}
-              onChange={handleRadioChange}
+            <input type="radio" value="Option 1" checked={selectedOption === 'Option 1'} onChange={handleRadioChange}
             />
             Option 1
           </label>
           <label>
-            <input
-              type="radio"
-              value="Option 2"
-              checked={selectedOption === 'Option 2'}
-              onChange={handleRadioChange}
+            <input type="radio" value="Option 2" checked={selectedOption === 'Option 2'} onChange={handleRadioChange}
             />
             Option 2
           </label>
           <label>
-            <input
-              type="radio"
-              value="Option 3"
-              checked={selectedOption === 'Option 3'}
-              onChange={handleRadioChange}
+            <input type="radio" value="Option 3" checked={selectedOption === 'Option 3'} onChange={handleRadioChange}
             />
             Option 3
           </label>
@@ -1810,11 +1472,11 @@ export default SurveyForm;
 
 
 import React from 'react';
-import SurveyForm from './SurveyForm'; // Ensure this path matches the location of your SurveyForm file
+import SurveyForm from './SurveyForm';
 
 const App = () => {
   return (
-    <div className="App">
+    <div>
       <h1>Survey Form</h1>
       <SurveyForm />
     </div>
@@ -1833,13 +1495,13 @@ to display “Welcome to LJU”*/
 // ColorContext.js
 import React, { createContext, useContext } from 'react';
 
-// Create a context with default values
+
 const ColorContext = createContext({
   backgroundColor: 'red',
   textColor: 'green'
 });
 
-// Custom hook to use the ColorContext
+
 export const useColorContext = () => useContext(ColorContext);
 
 export default ColorContext;
@@ -2041,17 +1703,9 @@ const Calculator = () => {
     <div>
       <h1>Simple Calculator</h1>
       <div>
-        <input
-          type="number"
-          value={num1}
-          onChange={handleNum1Change}
-          placeholder="Enter number 1"
+        <input type="number" value={num1} onChange={handleNum1Change} placeholder="Enter number 1"
         />
-        <input
-          type="number"
-          value={num2}
-          onChange={handleNum2Change}
-          placeholder="Enter number 2"
+        <input type="number" value={num2} onChange={handleNum2Change} placeholder="Enter number 2"
         />
       </div>
       <button onClick={handleAddition}>Add</button>
@@ -2151,39 +1805,25 @@ const F1 = () => {
         <form onSubmit={handleSubmit}>
           <div>
             <label>First Name:
-              <input
-                type="text"
-                name="firstName"
-                value={formData.firstName}
-                onChange={handleChange}
+              <input type="text" name="firstName" value={formData.firstName} onChange={handleChange}
               />
             </label>
           </div>
           <div>
             <label>Last Name:
-              <input
-                type="text"
-                name="lastName"
-                value={formData.lastName}
-                onChange={handleChange}
+              <input type="text" name="lastName" value={formData.lastName} onChange={handleChange}
               />
             </label>
           </div>
           <div>
             <label>Message:
-              <textarea
-                name="message"
-                value={formData.message}
-                onChange={handleChange}
+              <textarea name="message" value={formData.message} onChange={handleChange}
               />
             </label>
           </div>
           <div>
             <label>City:
-              <select
-                name="city"
-                value={formData.city}
-                onChange={handleChange}
+              <select name="city" value={formData.city} onChange={handleChange}
               >
                 <option value="">Select City</option>
                 <option value="New York">New York</option>
@@ -2195,22 +1835,12 @@ const F1 = () => {
           <div>
             <label>Gender:
               <label>
-                <input
-                  type="radio"
-                  name="gender"
-                  value="Male"
-                  checked={formData.gender === 'Male'}
-                  onChange={handleChange}
+                <input type="radio" name="gender" value="Male" checked={formData.gender === 'Male'} onChange={handleChange}
                 />
                 Male
               </label>
               <label>
-                <input
-                  type="radio"
-                  name="gender"
-                  value="Female"
-                  checked={formData.gender === 'Female'}
-                  onChange={handleChange}
+                <input type="radio" name="gender" value="Female" checked={formData.gender === 'Female'} onChange={handleChange}
                 />
                 Female
               </label>
@@ -2245,7 +1875,7 @@ const F3 = () => {
     }
   }, [formData]);
 
-  return null; // This component just shows an alert and does not render anything
+  return null;
 };
 
 export default F3;
