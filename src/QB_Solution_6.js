@@ -14,7 +14,6 @@ function App() {
 export default App;
 
 
-
 /*===>QB-354
 Create an ReactJS app which shows the how to pass and read data using props*/
 import React from 'react';
@@ -26,7 +25,6 @@ function Greeting(props) {
         </div>
     );
 }
-
 export default Greeting;
 
 
@@ -123,12 +121,7 @@ const TextInput = () => {
 
   return (
     <div>
-      <input 
-        type="text" 
-        value={inputValue} 
-        onChange={handleChange} 
-        placeholder="Type something..."
-      />
+      <input type="text" value={inputValue} onChange={handleChange} />
     </div>
   );
 };
@@ -160,9 +153,7 @@ const WelcomeButton = () => {
 
   return (
     <div>
-      <button onDoubleClick={handleDoubleClick}>
-        Double Click Me
-      </button>
+      <button onDoubleClick={handleDoubleClick}>Double Click Me</button>
     </div>
   );
 };
@@ -212,17 +203,13 @@ Write a program to create ReactJS application having an array of strings and con
 import React from 'react';
 
 const App = () => {
-  // Initial array of strings
   const strings = ['hello', 'world', 'react', 'js'];
-
-  // Convert each string to uppercase using the map method
   const uppercasedStrings = strings.map(str => str.toUpperCase());
-
   return (
-    <div style={{ textAlign: 'center', marginTop: '50px' }}>
+    <div>
       <h1>Uppercased Strings</h1>
-      {uppercasedStrings.map((str, index) => (
-        <h2 key={index}>{str}</h2>
+      {uppercasedStrings.map((str) => (
+        <h2>{str}</h2>
       ))}
     </div>
   );
@@ -245,10 +232,10 @@ const App = () => {
   const multipliedNumbers = numbers.map(num => num * 5);
 
   return (
-    <div style={{ textAlign: 'center', marginTop: '50px' }}>
+    <div>
       <h1>Multiplied Numbers</h1>
-      {multipliedNumbers.map((num, index) => (
-        <h2 key={index}>{num}</h2>
+      {multipliedNumbers.map((num) => (
+        <h2>{num}</h2>
       ))}
     </div>
   );
@@ -261,10 +248,8 @@ export default App;
 /*===>QB-362
 Create react app which displays 3 images using map function*/
 import React from 'react';
-import './App.css';
 
 const App = () => {
-  // Array of image paths
   const images = [
     '/images/image1.jpg',
     '/images/image2.jpg',
@@ -272,15 +257,12 @@ const App = () => {
   ];
 
   return (
-    <div className="App">
+    <div>
       <h1>Image Gallery</h1>
-      <div className="image-gallery">
-        {images.map((image, index) => (
+      <div>
+        {images.map((image) => (
           <img
-            key={index}
-            src={process.env.PUBLIC_URL + image}
-            alt={`Image ${index + 1}`}
-            className="gallery-image"
+            src={image}
           />
         ))}
       </div>
@@ -300,30 +282,25 @@ display all remaining digits of the array. */
 import React from 'react';
 
 const FilterArrayComponent = () => {
-  // Array of numbers from 1 to 5
+
   const numbers = [1, 2, 3, 4, 5];
 
-  // Filter out the digit 3
   const filteredNumbers = numbers.filter(num => num !== 3);
-
   return (
     <div>
       <h1>Filtered Numbers</h1>
       <ul>
-        {filteredNumbers.map((num, index) => (
-          <li key={index}>{num}</li>
+        {filteredNumbers.map((num) => (
+          <li>{num}</li>
         ))}
       </ul>
     </div>
   );
 };
-
 export default FilterArrayComponent;
 
-
 import React from 'react';
-import FilterArrayComponent from './FilterArrayComponent'; // Adjust the import path as needed
-
+import FilterArrayComponent from './FilterArrayComponent';
 const App = () => {
   return (
     <div>
@@ -358,11 +335,9 @@ const Home = () => {
     </div>
   );
 };
-
 export default Home;
 
 import React from 'react';
-
 const Shop = () => {
   return (
     <div>
@@ -371,12 +346,10 @@ const Shop = () => {
     </div>
   );
 };
-
 export default Shop;
 
 
 import React from 'react';
-
 const Contact = () => {
   return (
     <div>
@@ -385,11 +358,9 @@ const Contact = () => {
     </div>
   );
 };
-
 export default Contact;
 
 import React from 'react';
-
 const Nopage = () => {
   return (
     <div>
@@ -398,9 +369,7 @@ const Nopage = () => {
     </div>
   );
 };
-
 export default Nopage;
-
 
 import React from 'react';
 import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
@@ -436,7 +405,6 @@ const Main = () => {
     </Router>
   );
 };
-
 export default Main;
 
 
@@ -462,7 +430,6 @@ Create React app to pass student name, roll number, t1 marks and t2 marks of 2 s
 and read the information and display in table format. Use Props*/
 import React from 'react';
 
-// Component to display student information in a table
 const StudentTable = ({ students }) => {
   return (
     <table>
@@ -475,8 +442,8 @@ const StudentTable = ({ students }) => {
         </tr>
       </thead>
       <tbody>
-        {students.map((student, index) => (
-          <tr key={index}>
+        {students.map((student) => (
+          <tr>
             <td>{student.name}</td>
             <td>{student.rollNumber}</td>
             <td>{student.t1Marks}</td>
@@ -487,28 +454,23 @@ const StudentTable = ({ students }) => {
     </table>
   );
 };
-
 export default StudentTable;
-
 
 import React from 'react';
 import StudentTable from './StudentTable';
 
 const App = () => {
-  // Array of student objects
   const students = [
     { name: 'Alice', rollNumber: 'A101', t1Marks: 85, t2Marks: 90 },
     { name: 'Bob', rollNumber: 'B202', t1Marks: 78, t2Marks: 82 }
   ];
-
   return (
-    <div className="App">
+    <div>
       <h1>Student Information</h1>
       <StudentTable students={students} />
     </div>
   );
 };
-
 export default App;
 
 
