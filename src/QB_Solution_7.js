@@ -4,7 +4,6 @@ clicking that respective button. Also, increment of the number should be perform
 less than 10 and decrement of the number should be performed if number is greater than 0. 
 */
 import React, { useState } from 'react';
-
 const Counter = () => {
   const [count, setCount] = useState(0);
 
@@ -21,41 +20,22 @@ const Counter = () => {
   };
 
   return (
-    <div style={styles.container}>
+    <div>
       <h1>Counter: {count}</h1>
-      <button onClick={increment} style={styles.button}>Increment</button>
-      <button onClick={decrement} style={styles.button}>Decrement</button>
+      <button onClick={increment}>Increment</button>
+      <button onClick={decrement}>Decrement</button>
     </div>
   );
 };
-
-const styles = {
-  container: {
-    display: 'flex',
-    flexDirection: 'column',
-    alignItems: 'center',
-    justifyContent: 'center',
-    height: '100vh',
-    backgroundColor: '#f0f0f0',
-  },
-  button: {
-    margin: '10px',
-    padding: '10px 20px',
-    fontSize: '16px',
-    cursor: 'pointer',
-  },
-};
-
 export default Counter;
 
 
 import React from 'react';
 import Counter from './Counter';
-import './App.css';
 
 const App = () => {
   return (
-    <div className="App">
+    <div>
       <Counter />
     </div>
   );
@@ -79,14 +59,12 @@ change should be performed while double clicking on the button.
 import React, { useState } from 'react';
 
 const LJUniversity = () => {
-  // State hooks
   const [text, setText] = useState('LJ University');
   const [isWelcomeText, setIsWelcomeText] = useState(false);
   const [color, setColor] = useState('red');
   const [isBlueColor, setIsBlueColor] = useState(false);
   const [isVisible, setIsVisible] = useState(true);
 
-  // Handlers
   const handleChangeText = () => {
     if (isWelcomeText) {
       setText('LJ University');
@@ -110,44 +88,24 @@ const LJUniversity = () => {
   };
 
   return (
-    <div style={styles.container}>
+    <div>
       <h1 style={{ color }}>{text}</h1>
       {isVisible && <h2>React Js Hooks</h2>}
-      <button onClick={handleChangeText} style={styles.button}>Change Text</button>
-      <button onDoubleClick={handleChangeColor} style={styles.button}>Change Color</button>
-      <button onClick={handleToggleVisibility} style={styles.button}>
-        {isVisible ? 'Hide' : 'Show'}
-      </button>
+      <button onClick={handleChangeText}>Change Text</button>
+      <button onDoubleClick={handleChangeColor}>Change Color</button>
+      <button onClick={handleToggleVisibility}>{isVisible ? 'Hide' : 'Show'}</button>
     </div>
   );
-};
-
-const styles = {
-  container: {
-    display: 'flex',
-    flexDirection: 'column',
-    alignItems: 'center',
-    justifyContent: 'center',
-    height: '100vh',
-    backgroundColor: '#f0f0f0',
-  },
-  button: {
-    margin: '10px',
-    padding: '10px 20px',
-    fontSize: '16px',
-    cursor: 'pointer',
-  },
 };
 
 export default LJUniversity;
 
 import React from 'react';
 import LJUniversity from './LJUniversity';
-import './App.css';
 
 const App = () => {
   return (
-    <div className="App">
+    <div>
       <LJUniversity />
     </div>
   );

@@ -225,10 +225,8 @@ Create react js app to display these multiplied numbers using map function.*/
 import React from 'react';
 
 const App = () => {
-  // Initial array of numbers
-  const numbers = [1, 2, 3, 4, 5];
 
-  // Multiply each number by 5 using the map method
+  const numbers = [1, 2, 3, 4, 5];
   const multipliedNumbers = numbers.map(num => num * 5);
 
   return (
@@ -461,8 +459,8 @@ import StudentTable from './StudentTable';
 
 const App = () => {
   const students = [
-    { name: 'Alice', rollNumber: 'A101', t1Marks: 85, t2Marks: 90 },
-    { name: 'Bob', rollNumber: 'B202', t1Marks: 78, t2Marks: 82 }
+    { name: 'rohit', rollNumber: '1', t1Marks: 85, t2Marks: 90 },
+    { name: 'yash', rollNumber: '2', t1Marks: 78, t2Marks: 82 }
   ];
   return (
     <div>
@@ -474,8 +472,6 @@ const App = () => {
 export default App;
 
 
-
-
 /*===>QB-366
 Create react app and use routing functionality of react to perform the tasks as asked.
 Create one file named Main.js which contains links for home and about page and routing functionality.
@@ -483,7 +479,7 @@ In Home.js file add one image and heading(h1) "LJ University"
 In About.js file add branch list (CSE,IT,CE). 
 */
 import React from 'react';
-import universityImage from './university.jpg'; // Make sure to add your image in the `src` directory
+import universityImage from './university.jpg'; 
 
 const Home = () => {
   return (
@@ -493,12 +489,10 @@ const Home = () => {
     </div>
   );
 };
-
 export default Home;
 
 
 import React from 'react';
-
 const About = () => {
   const branches = ['CSE', 'IT', 'CE'];
 
@@ -506,14 +500,13 @@ const About = () => {
     <div>
       <h1>About Us</h1>
       <ul>
-        {branches.map((branch, index) => (
-          <li key={index}>{branch}</li>
+        {branches.map((branch) => (
+          <li>{branch}</li>
         ))}
       </ul>
     </div>
   );
 };
-
 export default About;
 
 
@@ -550,11 +543,11 @@ export default Main;
 
 import React from 'react';
 import Main from './Main';
-import './App.css';
+
 
 const App = () => {
   return (
-    <div className="App">
+    <div>
       <Main />
     </div>
   );
@@ -569,21 +562,18 @@ export default App;
 Write a ReactJS code in which we have apply filter to skip digits which are less than “10” from the
 array and display all remaining digits of the array [3,5,11,4,17,8,21,2,26,13,8]. */
 import React from 'react';
-import './App.css';
 
 const App = () => {
-  // Array of numbers
-  const numbers = [3, 5, 11, 4, 17, 8, 21, 2, 26, 13, 8];
 
-  // Filter out numbers less than 10
+  const numbers = [3, 5, 11, 4, 17, 8, 21, 2, 26, 13, 8];
   const filteredNumbers = numbers.filter(num => num >= 10);
 
   return (
-    <div className="App">
+    <div>
       <h1>Filtered Numbers</h1>
       <ul>
-        {filteredNumbers.map((num, index) => (
-          <li key={index}>{num}</li>
+        {filteredNumbers.map((num) => (
+          <li>{num}</li>
         ))}
       </ul>
     </div>
@@ -600,38 +590,29 @@ Create React app to pass color(red), background color(yellow), font size(25px) a
 properties to component and apply css to "Lj Students" text written in p tag. use Props*/
 import React from 'react';
 
-// Component that receives styling props
 const StyledText = ({ color, backgroundColor, fontSize, fontStyle }) => {
   const style = {
     color: color,
     backgroundColor: backgroundColor,
     fontSize: fontSize,
     fontStyle: fontStyle,
-    padding: '10px', // Optional padding for better visibility
-    borderRadius: '5px' // Optional border radius for aesthetics
   };
 
   return (
     <p style={style}>Lj Students</p>
   );
 };
-
 export default StyledText;
 
 import React from 'react';
 import StyledText from './StyledText';
-import './App.css';
+
 
 const App = () => {
   return (
-    <div className="App">
+    <div>
       <h1>Styled Text Example</h1>
-      <StyledText
-        color="red"
-        backgroundColor="yellow"
-        fontSize="25px"
-        fontStyle="italic"
-      />
+      <StyledText color="red" backgroundColor="yellow" fontSize="25px" fontStyle="italic"/>
     </div>
   );
 };
@@ -647,27 +628,23 @@ Add an array of objects which contains name and age of people.
 Apply filter to find people with age less than 40. And display name of all people using map function. 
 */
 import React from 'react';
-import './App.css';
 
 const App = () => {
-  // Array of people objects
   const people = [
-    { name: 'Alice', age: 29 },
-    { name: 'Bob', age: 35 },
-    { name: 'Charlie', age: 42 },
-    { name: 'David', age: 38 },
-    { name: 'Eve', age: 31 }
+    { name: 'yash', age: 29 },
+    { name: 'rohit', age: 35 },
+    { name: 'dev', age: 42 },
+    { name: 'parth', age: 38 },
+    { name: 'vansh', age: 31 }
   ];
 
-  // Filter people with age less than 40
   const filteredPeople = people.filter(person => person.age < 40);
-
   return (
-    <div className="App">
+    <div>
       <h1>People Under 40</h1>
       <ul>
-        {filteredPeople.map((person, index) => (
-          <li key={index}>{person.name}</li>
+        {filteredPeople.map((person) => (
+          <li>{person.name}</li>
         ))}
       </ul>
     </div>
@@ -685,27 +662,24 @@ Add an array of objects which contains name and branch(CSE,IT,CE) of students.
 Apply filter to find students who are from CSE branch. And display name of all studens of CSE branch
 using map function*/
 import React from 'react';
-import './App.css';
 
 const App = () => {
-  // Array of student objects
   const students = [
-    { name: 'Alice', branch: 'CSE' },
-    { name: 'Bob', branch: 'IT' },
-    { name: 'Charlie', branch: 'CSE' },
-    { name: 'David', branch: 'CE' },
-    { name: 'Eve', branch: 'CSE' }
+    { name: 'rohit', branch: 'CSE' },
+    { name: 'dev', branch: 'IT' },
+    { name: 'yash', branch: 'CSE' },
+    { name: 'ganpat', branch: 'CE' },
+    { name: 'parth', branch: 'CSE' }
   ];
 
-  // Filter students who are from the CSE branch
   const cseStudents = students.filter(student => student.branch === 'CSE');
 
   return (
-    <div className="App">
+    <div>
       <h1>CSE Students</h1>
       <ul>
-        {cseStudents.map((student, index) => (
-          <li key={index}>{student.name}</li>
+        {cseStudents.map((student) => (
+          <li>{student.name}</li>
         ))}
       </ul>
     </div>
@@ -800,11 +774,10 @@ export default Main;
 
 import React from 'react';
 import Main from './Main';
-import './App.css';
 
 const App = () => {
   return (
-    <div className="App">
+    <div>
       <Main />
     </div>
   );
@@ -839,15 +812,14 @@ import React from 'react';
 import Product from './Product';
 
 const ProductList = () => {
-  // Array of product objects
   const products = [
     {
-      pic: 'https://via.placeholder.com/150', // Example image URL
+      pic: 'https://via.placeholder.com/150',
       name: 'Product 1',
       price: 29.99
     },
     {
-      pic: 'https://via.placeholder.com/150', // Example image URL
+      pic: 'https://via.placeholder.com/150',
       name: 'Product 2',
       price: 39.99
     }
@@ -857,13 +829,8 @@ const ProductList = () => {
     <div>
       <h1>Product List</h1>
       <div style={{ display: 'flex', gap: '20px', justifyContent: 'center' }}>
-        {products.map((product, index) => (
-          <Product
-            key={index}
-            image={product.pic}
-            name={product.name}
-            price={product.price}
-          />
+        {products.map((product) => (
+          <Product image={product.pic} name={product.name} price={product.price}/>
         ))}
       </div>
     </div>
@@ -875,7 +842,7 @@ export default ProductList;
 
 import React from 'react';
 import ProductList from './ProductList';
-import './App.css';
+
 
 const App = () => {
   return (
@@ -886,8 +853,6 @@ const App = () => {
 };
 
 export default App;
-
-
 
 
 
@@ -903,8 +868,6 @@ const Example = ({ backgroundColor, fontSize, fontStyle, textTransform }) => {
     fontSize: fontSize,
     fontStyle: fontStyle,
     textTransform: textTransform,
-    padding: '20px', // Optional padding for better visibility
-    borderRadius: '5px' // Optional border radius for aesthetics
   };
 
   return (
@@ -922,30 +885,22 @@ import Example from './Example';
 const Example2 = () => {
   return (
     <div>
-      <Example
-        backgroundColor="green"
-        fontSize="50px"
-        fontStyle="italic"
-        textTransform="uppercase"
-      />
+      <Example backgroundColor="green" fontSize="50px" fontStyle="italic" textTransform="uppercase"/>
     </div>
   );
 };
-
 export default Example2;
 
 import React from 'react';
 import Example2 from './Example2';
-import './App.css';
 
 const App = () => {
   return (
-    <div className="App">
+    <div>
       <Example2 />
     </div>
   );
 };
-
 export default App;
 
 
@@ -1062,11 +1017,10 @@ export default Home;
 
 import React from 'react';
 import Home from './Home';
-import './App.css';
 
 const App = () => {
   return (
-    <div className="App">
+    <div>
       <Home />
     </div>
   );
@@ -1085,7 +1039,6 @@ import React, { useEffect } from 'react';
 
 const Component = ({ number }) => {
   useEffect(() => {
-    // Function to calculate and print the multiplication table
     const printTable = (num) => {
       console.log(`Multiplication table for ${num}:`);
       for (let i = 1; i <= 10; i++) {
@@ -1093,7 +1046,6 @@ const Component = ({ number }) => {
       }
     };
 
-    // Call the function with the passed number
     printTable(number);
   }, [number]);
 
@@ -1108,14 +1060,12 @@ export default Component;
 
 import React from 'react';
 import Component from './Component';
-import './App.css';
 
 const App = () => {
-  // Define the integer value to be passed as a prop
-  const number = 7; // You can change this value to any integer you like
+  const number = 7; 
 
   return (
-    <div className="App">
+    <div>
       <Component number={number} />
     </div>
   );
@@ -1135,7 +1085,7 @@ import React from 'react';
 
 const Product = ({ title, image, price, description }) => {
   return (
-    <div style={styles.productContainer}>
+    <div>
       <img src={image} alt={title} style={styles.image} />
       <h2 style={styles.title}>{title}</h2>
       <p style={styles.price}>${price.toFixed(2)}</p>
@@ -1144,34 +1094,6 @@ const Product = ({ title, image, price, description }) => {
   );
 };
 
-const styles = {
-  productContainer: {
-    border: '1px solid #ddd',
-    borderRadius: '8px',
-    padding: '10px',
-    textAlign: 'center',
-    margin: '10px',
-    width: '300px'
-  },
-  image: {
-    width: '100%',
-    height: 'auto',
-    borderRadius: '8px'
-  },
-  title: {
-    fontSize: '20px',
-    margin: '10px 0'
-  },
-  price: {
-    fontSize: '18px',
-    color: 'green',
-    margin: '5px 0'
-  },
-  description: {
-    fontSize: '14px',
-    color: '#666'
-  }
-};
 
 export default Product;
 
@@ -1180,7 +1102,6 @@ import React from 'react';
 import Product from './Product';
 
 const ProductList = () => {
-  // Array of products
   const products = [
     {
       title: 'Product 1',
@@ -1203,43 +1124,26 @@ const ProductList = () => {
   ];
 
   return (
-    <div style={styles.productListContainer}>
-      {products.map((product, index) => (
-        <Product
-          key={index}
-          title={product.title}
-          image={product.image}
-          price={product.price}
-          description={product.description}
-        />
+    <div>
+      {products.map((product) => (
+        <Product title={product.title} image={product.image} price={product.price} description={product.description}/>
       ))}
     </div>
   );
 };
-
-const styles = {
-  productListContainer: {
-    display: 'flex',
-    justifyContent: 'space-around',
-    flexWrap: 'wrap'
-  }
-};
-
 export default ProductList;
 
 import React from 'react';
 import ProductList from './ProductList';
-import './App.css';
 
 const App = () => {
   return (
-    <div className="App">
+    <div>
       <h1>Our Products</h1>
       <ProductList />
     </div>
   );
 };
-
 export default App;
 
 
@@ -1248,63 +1152,31 @@ export default App;
 /*===>QB-377
 Implement a character counter that displays the number of characters entered in a textarea input.*/
 import React, { useState } from 'react';
-
 const CharacterCounter = () => {
-  // State to store the input value
   const [text, setText] = useState('');
 
-  // Function to handle changes in the textarea
   const handleChange = (event) => {
     setText(event.target.value);
   };
 
   return (
-    <div style={styles.container}>
-      <textarea
-        value={text}
-        onChange={handleChange}
-        rows="10"
-        cols="50"
-        style={styles.textarea}
-      />
-      <div style={styles.counter}>
+    <div>
+      <textarea value={text} onChange={handleChange} rows="10" cols="50"/>
+      <div>
         Characters: {text.length}
       </div>
     </div>
   );
 };
-
-const styles = {
-  container: {
-    display: 'flex',
-    flexDirection: 'column',
-    alignItems: 'center',
-    marginTop: '20px'
-  },
-  textarea: {
-    border: '1px solid #ccc',
-    borderRadius: '4px',
-    padding: '10px',
-    fontSize: '16px',
-    resize: 'none' // Prevents resizing of textarea
-  },
-  counter: {
-    marginTop: '10px',
-    fontSize: '18px',
-    color: '#333'
-  }
-};
-
 export default CharacterCounter;
 
 
 import React from 'react';
 import CharacterCounter from './CharacterCounter';
-import './App.css';
 
 const App = () => {
   return (
-    <div className="App">
+    <div>
       <h1>Character Counter</h1>
       <CharacterCounter />
     </div>
@@ -1323,24 +1195,21 @@ Write react js script to perform the tasks as asked below using functional compo
 import React from 'react';
 
 const PeopleList = () => {
-  // Array of people with name and age
   const people = [
-    { name: 'John Doe', age: 28 },
-    { name: 'Jane Smith', age: 34 },
-    { name: 'Mike Johnson', age: 42 },
-    { name: 'Emily Davis', age: 25 },
-    { name: 'Chris Brown', age: 30 }
+    { name: 'Yadav Rohit', age: 28 },
+    { name: 'Parekh yash', age: 34 },
+    { name: 'Patel Dev', age: 42 },
+    { name: 'doshi jay', age: 25 },
+    { name: 'patel parth', age: 30 }
   ];
 
-  // Filter people with age less than 40
   const filteredPeople = people.filter(person => person.age < 40);
-
   return (
     <div>
       <h1>People under 40</h1>
       <ul>
-        {filteredPeople.map((person, index) => (
-          <li key={index}>{person.name}</li>
+        {filteredPeople.map((person) => (
+          <li>{person.name}</li>
         ))}
       </ul>
     </div>
@@ -1351,11 +1220,10 @@ export default PeopleList;
 
 import React from 'react';
 import PeopleList from './PeopleList';
-import './App.css';
 
 const App = () => {
   return (
-    <div className="App">
+    <div>
       <PeopleList />
     </div>
   );
@@ -1383,7 +1251,7 @@ import React from 'react';
 const Home = () => {
   return (
     <div>
-      <h1 style={{ fontWeight: 'bold' }}>Welcome to LJU</h1>
+      <h1>Welcome to LJU</h1>
     </div>
   );
 };
@@ -1396,7 +1264,7 @@ import React from 'react';
 
 const Product = ({ title, price, description }) => {
   return (
-    <div style={styles.productContainer}>
+    <div>
       <h2>{title}</h2>
       <p>Price: ${price}</p>
       <p>Description: {description}</p>
@@ -1405,7 +1273,6 @@ const Product = ({ title, price, description }) => {
 };
 
 const ProductList = () => {
-  // Array of product objects
   const products = [
     { title: 'Product 1', price: 29.99, description: 'This is a great product.' },
     { title: 'Product 2', price: 39.99, description: 'This is another great product.' },
@@ -1415,26 +1282,11 @@ const ProductList = () => {
   return (
     <div>
       <h1>Product Details</h1>
-      {products.map((product, index) => (
-        <Product
-          key={index}
-          title={product.title}
-          price={product.price}
-          description={product.description}
-        />
+      {products.map((product) => (
+        <Product title={product.title} price={product.price} description={product.description}/>
       ))}
     </div>
   );
-};
-
-const styles = {
-  productContainer: {
-    border: '1px solid #ddd',
-    borderRadius: '8px',
-    padding: '10px',
-    marginBottom: '10px',
-    textAlign: 'center'
-  }
 };
 
 export default ProductList;
@@ -1446,9 +1298,9 @@ import React from 'react';
 const Contact = () => {
   return (
     <div>
-      <h1 style={{ color: 'blue' }}>Contact Information</h1>
-      <p>Email: contact@lju.com</p>
-      <p>Phone: (123) 456-7890</p>
+      <h1>Contact Information</h1>
+      <p>Email:rohitkyadav2312@gmail.com</p>
+      <p>Phone: 9173697510</p>
     </div>
   );
 };
@@ -1462,12 +1314,11 @@ import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
 import Home from './components/Home';
 import ProductList from './components/Product';
 import Contact from './components/Contact';
-import './App.css';
 
 const App = () => {
   return (
     <Router>
-      <div className="App">
+      <div>
         <nav>
           <ul>
             <li><Link to="/">Home</Link></li>
@@ -1500,25 +1351,23 @@ same page. */
 import React from 'react';
 
 const AgeFilter = () => {
-  // Array of people with their ages
   const people = [
-    { name: 'John', age: 70 },
-    { name: 'Jane', age: 83 },
-    { name: 'Mike', age: 38 },
-    { name: 'Emily', age: 65 },
-    { name: 'Chris', age: 49 },
-    { name: 'Anna', age: 94 }
+    { name: 'rohit', age: 70 },
+    { name: 'jay', age: 83 },
+    { name: 'yash', age: 38 },
+    { name: 'dev', age: 65 },
+    { name: 'labh', age: 49 },
+    { name: 'vansh', age: 94 }
   ];
 
-  // Filter people with age greater than 60
   const filteredPeople = people.filter(person => person.age > 60);
 
   return (
     <div>
       <h1>People Aged Greater Than 60</h1>
       <ul>
-        {filteredPeople.map((person, index) => (
-          <li key={index}>{person.name} - {person.age} years</li>
+        {filteredPeople.map((person) => (
+          <li>{person.name} - {person.age} years</li>
         ))}
       </ul>
       <div>
@@ -1533,11 +1382,10 @@ export default AgeFilter;
 
 import React from 'react';
 import AgeFilter from './AgeFilter';
-import './App.css';
 
 const App = () => {
   return (
-    <div className="App">
+    <div>
       <AgeFilter />
     </div>
   );
@@ -1558,40 +1406,19 @@ and an alert should be displayed with the message "Your Product is Added to cart
 import React from 'react';
 
 const File1 = ({ productName, price }) => {
-  // Handler function for button click
   const handleAddToCart = () => {
     alert('Your Product is Added to cart!');
   };
 
   return (
-    <div style={styles.container}>
+    <div>
       <h2>{productName}</h2>
       <p>Price: ${price.toFixed(2)}</p>
-      <button onClick={handleAddToCart} style={styles.button}>
+      <button onClick={handleAddToCart}>
         Add to cart
       </button>
     </div>
   );
-};
-
-// Inline styling for the component
-const styles = {
-  container: {
-    border: '1px solid #ccc',
-    borderRadius: '5px',
-    padding: '20px',
-    margin: '10px',
-    textAlign: 'center'
-  },
-  button: {
-    backgroundColor: '#28a745',
-    color: 'white',
-    border: 'none',
-    borderRadius: '5px',
-    padding: '10px 20px',
-    fontSize: '16px',
-    cursor: 'pointer'
-  }
 };
 
 export default File1;
@@ -1599,11 +1426,10 @@ export default File1;
 
 import React from 'react';
 import File1 from './File1';
-import './App.css';
 
 const App = () => {
   return (
-    <div className="App">
+    <div>
       <h1>Product List</h1>
       <File1 productName="Laptop" price={999.99} />
       <File1 productName="Smartphone" price={499.99} />
@@ -1624,22 +1450,17 @@ Write react js script to perform the task as below using function component:
 No need to write App.js file.*/
 
 import React from 'react';
-
 const PersonsList = () => {
-  // Array of person objects
   const persons = [
-    { id: 1, name: 'John Doe', city: 'Ahmedabad' },
-    { id: 2, name: 'Jane Smith', city: 'Mumbai' },
-    { id: 3, name: 'Mike Johnson', city: 'Ahmedabad' },
-    { id: 4, name: 'Emily Davis', city: 'Delhi' },
-    { id: 5, name: 'Chris Brown', city: 'Ahmedabad' }
+    { id: 1, name: 'Yadav Rohit', city: 'Ahmedabad' },
+    { id: 2, name: 'parekh yash', city: 'Mumbai' },
+    { id: 3, name: 'patel dev', city: 'Ahmedabad' },
+    { id: 4, name: 'patel parth', city: 'Delhi' },
+    { id: 5, name: 'gadani panth', city: 'Ahmedabad' }
   ];
 
-  // Filter and map to display persons from Ahmedabad
-  const personsInAhmedabad = persons
-    .filter(person => person.city === 'Ahmedabad')
-    .map(person => (
-      <li key={person.id}>
+  const personsInAhmedabad = persons.filter(person => person.city === 'Ahmedabad').map(person => (
+      <li>
         ID: {person.id}, Name: {person.name}
       </li>
     ));
@@ -1662,7 +1483,7 @@ import PersonsList from './PersonsList';
 
 const App = () => {
   return (
-    <div className="App">
+    <div>
       <PersonsList />
     </div>
   );
