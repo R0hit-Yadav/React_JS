@@ -683,7 +683,7 @@ import Comp2 from './Comp2';
 import { UsernameProvider } from './UsernameContext';
 
 const Main = () => {
-  const username = 'JohnDoe';
+  const username = 'Yash Parekh';
 
   return (
     <UsernameProvider username={username}>
